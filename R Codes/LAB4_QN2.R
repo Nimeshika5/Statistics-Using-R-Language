@@ -1,0 +1,19 @@
+n=25
+sum_x=125
+sum_y=100
+sum_x2=650
+sum_y2=460
+sum_xy=508
+inc_x=c(6,8)
+inc_y=c(14,6)
+cor_x=c(8,6)
+cor_y=c(12,8)
+cor_sum_x=sum_x-sum(inc_x)+sum(cor_x)
+cor_sum_y=sum_y-sum(inc_y)+sum(cor_y)
+cor_sum_x2=sum_x2-sum(inc_x^2)+sum(cor_x^2)
+cor_sum_y2=sum_y2-sum(inc_y^2)+sum(cor_y^2)
+cor_sum_xy=sum_xy-sum(inc_x*inc_y)+sum(cor_x*cor_y)
+r_num=n*cor_sum_xy-(cor_sum_x*cor_sum_y)
+r_den=sqrt(((n*cor_sum_x2)-((cor_sum_x)^2))*((n*cor_sum_y2)-(cor_sum_y^2)))
+r=r_num/r_den
+sprintf("The new corrected correlation coefficient is %.4f",r)
